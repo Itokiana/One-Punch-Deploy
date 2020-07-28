@@ -63,11 +63,14 @@ sudo apt-get install -y nginx-extras
 echo -e $nginx_conf > /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
-echo -e $rails_server_launcher > $current_installation_path/bin/server_launcher.sh
 mkdir $current_installation_path/bin
+nano $current_installation_path/bin/server_launcher.sh
+sudo chmod +x $current_installation_path/bin/server_launcher.sh
+echo -e $rails_server_launcher > $current_installation_path/bin/server_launcher.sh
 sudo chmod +x $current_installation_path/bin/*.sh
 
 echo -e $service_conf > /etc/systemd/system/rails_server.service
+
 sudo systemctl start rails_server.service
 sudo systemctl enable rails_server.service
 
