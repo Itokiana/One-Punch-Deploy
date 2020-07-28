@@ -5,6 +5,60 @@
 # createdb -O $user_postgres $database_postgres
 # exit
 
+echo "
+xkkxxkkxxkkkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdddddddddddddddd
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkxxkkxxkkkxxxxxxxxxxxxxxxxxxxxxxxxxxdddddddxxx
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkxxxxxxxxxxxxxxxxxxxx
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkxxxxxxxxxxxxxxx
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkOkOOOOkOOOOOOkkkkkkkkkkkkkkkkkkkkkxxxxxxxxxxxxxx
+kkkkkkkkkkkkkkkkkkkkkkOkOOOOOOOOOOOOOOOOOOOOOOOOkkkkkkkkkkkkkkxxxxxxxxxxxxxx
+kkkkkkkkkkkkkkkkkkkOOOOOOOOOOOOOOOOOkkxoxOOOOOOOOOOkkkkkkkkkkkkxxxxxxxxxxxxx
+kkkkkkkkkkkkkkkkkOOOOOOOOOOOOOOOxdc;cc' .cldOOOOOOOOOOOkkkkkkkkkkkxxxxxxxxxx
+kkkkkkkkkkkkkkkOOOOOOOOOOOOOOOkl,..        .,cdxOOOOOOOOOOkkkkkkkkkxxxxxxxxx
+kkkkkkkkkkkkkkOOOOOOOOOOOOOkxl...            ..lOOOOOOOOOOOkkkkkkkkkkxxxxxxx
+kkkkkkkkkkkkkkkOOOOOOOO00Oo...';cloooc:,,,..   ,,dOOOOOOOOOOOkkkkkkkkkkxxxxx
+kkkkkkkkkkkkkkOOOOOOO000Oo..:odddxxxxxxxdddoc.   :okOOOOOOOOOOOkkkkkkkkkkkkk
+kkkkOOOOOOOOOOOOOOO00000k,;looddxxxxxxxxxxxddl:. .;O00OOOOOOOOOkkkkkkkkkkkkk
+kkkkOOOOOOOOOOOOO0000000:'clllllodxxxxxxxxxdoolc'.c000OOOOOOOOOOOkkkkkkkkkkk
+kkkOOOOOOOOOOOO00000000l.;c;.....':oxxxxdollllllc'k000000OOOOOOOOOOkkkkkkkkk
+OOOOOOOOOOOOOO00000000O.:l::cllc:,;codlc;'.. ..::.d0000000OOOOOOOOOOOkkkkkkk
+OOOOOOOOOOOOOO00000000o,ll:,'''.';:ldxc;,;clc;..;'c0000000OOOOOOOOOOOOOkkkkk
+OOOOOOOOOOOOOOO0000000;:oolc:;:cloddxxo::,',,;;;:;c00000000OOOOOOOOOOOOOOkkk
+OOOOOOOOOOOOOOO000000k'loodddxxxxddxxxolllc;'.';c:o00000000OOOOOOOOOOOOOOkkk
+OOOOOOOOOOOOOOOO0000l:clooddddddl:codollodddollll;k000000000OOOOOOOOOOOOOOOk
+OOOOOOOOOOOOOOO00000ol:llooooodoc:;;,....cddddolll0000000OOOOOOOOOOOOOOOOOOk
+OOOOOOOOOOOOOO000000doclllcllddxxxxxdxoc:loolollc:k00000OOOOOOOOOOOOOOOOOOkk
+OOOOOOOOOOOOOOO00000docllcc:,,';,,,;;;,:clllc::ccl0000000OOOOOOOOOOOOOOOOkkk
+OOOOOOOOOOOOOO000000Oxolcccclc:odxkkxdl,..';::clok0000000OOOOOOOOOOOOOOOOOkk
+OOOOOOOOOOOOOOOO000Okolc:::coooollodoc:;;;::::cod000000OOOOOOOOOOOOOOOOOOkkk
+OkOOOOOOOOOOOOOOOO0Oklccc::ccllllc:;;;:::::,';dO0000OOOOOOOOOOOOOOkkkkkkkkkk
+OOOOOOOOOOOOOOOOOO0Okolcc::clloooolllcc:;;'',:xO000OOOOOOOOOkkkOOkkkkkkkkkkk
+OOOOOOOOOOOOOOOOOOOOOxdoc;,;;:ccllllllcc:,,;cdk000OOOOOOOOOOOkkkkkkkkkkkkkkk
+OOOOOOOOOOOOOOOOOOOOOOkdlc;....'',,,,''''';lxkO00OOOOOOOOOOkkkkkkkkkkkkkxkxk
+OOOOOOOOOOOOOOOOOO000Okolol:'....      .':coO000OOOOOOOOOOkkkkkkkkkkkkkkkkkk
+OOOOOOOOOOOOOOOOO00000xlooool::;,'...',clllo0000OOOOOOOOOOOOkkkkkkkkkkkkkxxx
+OOOOOOOOOOOOOOOOOkkdcclooooddoodddoolllooollloxkkOOOOOOOOOOOOkkkkkkkkkkkkkxx
+OOOOOOkkxdolllccccc:,coodoodddddxxddooooddol;.:c:,,:oxkOOOOOOOOOkkkkkkkkkkkk
+xdolcc::,''.,:cllcc:,lodddddxxdddddddddddddo:.::c:,''.':ldxxkkOOOOkkkkkkkkkk
+cc,,:;''..,:cllll::;;cooooodxxxxxxxxxddddddol';;;:::;,...,;:ccloodxxkkkkkkkk
+c,',cc,..':cclcc::;;;;cdddxxxxxxxxddxkkkxxxxl,;;,';:;;;,..',:c::ccccldkkkkkk
+:,.,:c:'.;::::;:c::;:;;:dxxxxxxdddxxxkkkkkxc;;;;''';::::,...;;:::::c:ccdkkkk
+:,.,ccc,,,:c;,;::::,;::;;cdxxxxxxxxxkkkkxl;;;:,''',;;;;;;,,..';;;;,;::::lkOO
+c,.':cc;;,,;;,,;ccc:,,::;;;cdxxxkkkkkkdc:::::,','';;::;,;:,;'..';;,,;;:;;lkO
+lc,'ccc:,.;c:;',:::c;,,;:::;;clddxddo:;::cc:,',,';::c:,',;;;,'..;;,',;;:;:oO
+lc;';:,,c,;cc;,,;::::;'';:cc::;;;;;;;;:cccc;.''';:::c:'',,,;::'.':,',,;:;;:d
+:l:,'';,:,,cc;;;;::::;,',;:cclllccccccccc:,'.',;:::::;',;:;,;:,.,;,'.';::;;:
+;ll:,.;,:;'c:;:::::c::;,,,,;::cclcclllc::,'..,;::;:::;',;;::;,,..;;..',;;;;;
+;clc;..':;'::;ccc::::::;;,,:;:::cccccc:;,..',;;::::c:;',;;:;;;'.',;'.',,;::;
+':ll;'.'c;,c:cc:cc::::;;;;;;;;::::ccc;;,'.',;::;::c::;,,,;;;;:,..,;;'';;:::;
+',lc:;..c,,ccc:cc::cc:;;,,;;::::cc:::;,'.';::;::cc:cc:,,,;,,,;;..;,,'';:;;;:
+,.:cl;..:::cccccc:::c::::::::::c::c:;,..,;:;:c:ccc:cc:;,,,,,,::..,;,'';::;:;
+:;'cl;..:::cccc:::;c::;::c::::ccccc;,'.,;::::ccccc:cc;;,,,;,,;;..';:,';;;;;;
+c;,;c;..'c:ccc:::::::::::c:c:::ccc:;'.';::::cccccc::::;,,,,,,;;..,::;',;;;;,
+c;.':;. .;:::::::::;;;;;::ccc:cccc:,.',:;:c::cc:::::;;,'',,,;:;..,;:,'',;;;,
+c:..;;. .,:;;;;;;;;;;::::c:c:cccc:;'',;;;:::cccccc:::;,'',,,,:,..';:;,',;;;;
+"
+
 read -p "Chemin absolu du projet: " project_path
 read -p "Secret key base (using 'rails secret' in project): " secret_key_base
 echo -e "\n"
