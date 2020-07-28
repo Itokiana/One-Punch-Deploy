@@ -5,7 +5,6 @@ This is an project who help to deploy **ruby on application** easly. You specify
 There are the list of technologies who will be install:
 
  - **curl**
- - **Git**
  - **Ruby**
  - **Rails**
  - **NodeJS**
@@ -15,7 +14,8 @@ There are the list of technologies who will be install:
 
 # How it works?
 ## Clone the repository
-First, clone repository, use this cli:
+First clone or copy your RoR project folder in your server.
+Next, clone the repository in your server, use this cli:
 
     git clone https://github.com/Itokiana/One-Punch-Deploy.git
 
