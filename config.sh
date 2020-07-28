@@ -53,7 +53,7 @@ service_conf="
 rails_server_launcher="
 #!/bin/bash
 \n
-\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails s
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails assets:precompile db:migrate s
 \n
 "
 
