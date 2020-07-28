@@ -45,14 +45,18 @@ service_conf="
 # echo -e "NodeJS: $node_version"
 # echo -e "Ruby: $ruby_version"
 
-read -p "Preciser le repository github: " repo_github
-echo -e "\n"
-read -p "Preciser la version de Node JS: " -n 2 node_version
-echo -e "\n"
-read -p "Preciser la version de Ruby: " ruby_version
-read -p "Preciser la version de Rails: " rails_version
+# read -p "Preciser le repository github: " repo_github
+# echo -e "\n"
+# read -p "Preciser la version de Node JS: " -n 2 node_version
+# echo -e "\n"
+# read -p "Preciser la version de Ruby: " ruby_version
+# read -p "Preciser la version de Rails: " rails_version
 
 
 # echo "chemin $path_server_launcher"
-echo -e $nginx_conf
+# echo -e $nginx_conf
 # echo -e $service_conf
+
+p='l'
+
+ls -a$p

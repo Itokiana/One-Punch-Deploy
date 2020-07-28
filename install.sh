@@ -1,6 +1,15 @@
 #!/bin/bash
+read -p "Login hebergeur: " user_service
+read -p "Chemin absolu du projet: " project_path
+echo -e "\n"
+read -p "Preciser le repository github: " repo_github
+echo -e "\n"
+read -p "Preciser la version de Node JS: " -n 2 node_version
+echo -e "\n"
+read -p "Preciser la version de Ruby: " ruby_version
+read -p "Preciser la version de Rails: " rails_version
+read -p "Secret key base (using 'rails secret' in project): " secret_key_base
 
-user_service='root'
 current_installation_path=`pwd`
 
 
@@ -22,6 +31,13 @@ server {
 \n}
 '
 
+rails_server_launcher="
+#!/bin/bash
+\n
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL=$database_url RAILS_ENV=production /$user_service/.rbenv/shims/rails s
+\n
+"
+
 service_conf="
 [Unit]
 \nDescription=Service to launch rails server
@@ -32,18 +48,11 @@ service_conf="
 \nRestart=always
 \nRestartSec=1
 \nUser=$user_service
-\nExecStart=/bin/bash $path_server_launcher/server_launcher.sh
+\nExecStart=/bin/bash $current_installation_path/bin/server_launcher.sh
 \n
 \n[Install]
 \nWantedBy=multi-user.target
 "
-
-read -p "Preciser le repository github: " repo_github
-echo -e "\n"
-read -p "Preciser la version de Node JS: " -n 2 node_version
-echo -e "\n"
-read -p "Preciser la version de Ruby: " ruby_version
-read -p "Preciser la version de Rails: " rails_version
 
 sudo apt install curl
 curl -sL https://deb.nodesource.com/setup_$node_version.x | sudo -E bash -
@@ -70,3 +79,14 @@ gem install bundler
 gem install rails -v $rails_version
 
 rbenv rehash
+
+sudo apt-get install -y nginx-extras
+echo -e $nginx_conf > /etc/nginx/site-enabled/default
+sudo service nginx restart
+
+echo -e $rails_server_launcher > $current_installation_path/bin/server_launcher.sh
+sudo chmod +x $current_installation_path/bin/*.sh
+
+echo -e $service_conf > /etc/systemd/system/rails_server.service
+sudo service rails_server start
+sudo service rails_server enable
