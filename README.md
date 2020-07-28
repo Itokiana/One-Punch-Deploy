@@ -36,7 +36,7 @@ You must create role and database before to pass in the next. Just to that:
 
 To auto-config your server, just type this cli:
 
-    ./config.sh
+    sudo ./config.sh
 
 > NB: this command, add all of the configuration to run your server
 
