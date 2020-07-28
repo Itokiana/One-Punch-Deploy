@@ -1,5 +1,10 @@
 #!/bin/bash
-
+#
+#   Author: Itokiana
+#   
+#   Copyright 2020
+#
+#
 # sudo su - postgres
 # createuser --pwprompt $user_postgres
 # createdb -O $user_postgres $database_postgres
@@ -130,6 +135,72 @@ cd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$u
 sudo systemctl start rails_server.service
 sudo systemctl enable rails_server.service
 
+
+alias_cli="
+\nalias rails-console=\"/bin/bash $current_installation_path/bin/rails_console.sh\"
+\nalias db-migrate=\"/bin/bash $current_installation_path/bin/rails_db_migrate.sh\"
+\nalias rails-server-start=\"/bin/bash $current_installation_path/bin/rails_server_start.sh\"
+\nalias rails-server-stop=\"/bin/bash $current_installation_path/bin/rails_server_stop.sh\"
+\nalias rails-server-status=\"/bin/bash $current_installation_path/bin/rails_server_status.sh\"
+\nalias rails-log-renew=\"/bin/bash $current_installation_path/bin/renew_log.sh\"
+\nalias rails-assets-precompile=\"/bin/bash $current_installation_path/bin/rails_assets_precompile.sh\"
+\nalias rails-view-log=\"/bin/bash $current_installation_path/bin/rails_log.sh\"
+\nalias MAJ-project=\"/bin/bash $current_installation_path/bin/MAJ.sh\"
+"
+echo -e $alias_cli >> $HOME/.bashrc
+
+rails_console="
+#!/bin/bash
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails c
+"
+rails_db_migrate="
+#!/bin/bash
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails db:migrate
+\nsudo service rails_server start
+"
+rails_server_start="
+#!/bin/bash
+\nsudo service rails_server start
+"
+rails_server_stop="
+#!/bin/bash
+\nsudo service rails_server stop
+"
+rails_server_status="
+#!/bin/bash
+\nsudo service rails_server status
+"
+renew_log="
+#!/bin/bash
+\nrm $project_path/log/production.log && touch $project_path/log/production.log 
+\nsudo service rails_server restart
+"
+rails_assets_precompile="
+#!/bin/bash
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails assets:precompile
+\nsudo service rails_server restart
+"
+rails_log="
+#!/bin/bash
+\nnano /root/OIAM/log/production.log
+"
+MAJ="
+#!/bin/bash
+\ncd $project_path && git pull
+\nsudo service rails_server restart
+"
+
+touch $current_installation_path/bin/rails_console.sh
+touch $current_installation_path/bin/rails_db_migrate.sh
+touch $current_installation_path/bin/rails_server_start.sh
+touch $current_installation_path/bin/rails_server_stop.sh
+touch $current_installation_path/bin/rails_server_status.sh
+touch $current_installation_path/bin/renew_log.sh
+touch $current_installation_path/bin/rails_assets_precompile.sh
+touch $current_installation_path/bin/rails_log.sh
+touch $current_installation_path/bin/MAJ.sh
+
+sudo chmod +x $current_installation_path/bin/*.sh
 
 echo '#####################################################################################'
 echo 'CONFIG OK'

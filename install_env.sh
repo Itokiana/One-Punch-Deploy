@@ -1,5 +1,11 @@
 #!/bin/bash
-
+#
+#   Author: Itokiana
+#   
+#   This setup is from https://gorails.com/setup/ubuntu/20.04
+#   Copyright 2020
+#
+#
 echo "
 xkkxxkkxxkkkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdddddddddddddddd
 kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkxxkkxxkkkxxxxxxxxxxxxxxxxxxxxxxxxxxdddddddxxx
