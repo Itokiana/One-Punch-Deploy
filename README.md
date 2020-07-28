@@ -2,7 +2,7 @@
 
 This is an project who help to deploy **ruby on application** easly. You specify your version of your environment and it install automatically for you with **CLI interaction**. It deploy your rails application with nginx using **reverse-proxy**.
 
-There are the list of technologies who will be installed:
+There are the list of technologies who will be install:
 
  - **curl**
  - **Git**
