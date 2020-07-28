@@ -73,6 +73,13 @@ rbenv global $ruby_version
 gem install bundler
 
 gem install rails -v $rails_version
+echo '#####################################################################################'
+echo 'ENV INSTALLED'
+echo "Node JS: `node -v`"
+echo "Yarn: `yarn -v`"
+echo "Ruby: `ruby -v`"
+echo "Rails: `rails -v`"
+echo '#####################################################################################'
 
 rbenv rehash
 
