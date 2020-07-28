@@ -1,8 +1,8 @@
 #!/bin/bash
 read -p "Login hebergeur: " user_service
 read -p "Chemin absolu du projet: " project_path
-echo -e "\n"
-read -p "Preciser le repository github: " repo_github
+#echo -e "\n"
+#read -p "Preciser le repository github: " repo_github
 echo -e "\n"
 read -p "Preciser la version de Node JS: " -n 2 node_version
 echo -e "\n"
