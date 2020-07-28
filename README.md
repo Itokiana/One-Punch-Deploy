@@ -45,13 +45,13 @@ That's all, you can type you ip server like **http://x.x.x.x** in browser and en
 
 NB: You have some alias commands for some tasks who are installed automatically, such as:
 
-**rails-console:** To view rails console
-**db-migrate:** to migrate
-**rails-server-start:** to launch service for starting rails server
-**rails-server-stop:** to launch service for starting rails server
-**rails-server-status:** to view status of service
-**rails-log-renew:** to clean $PROJECT/log/production.log
-**rails-assets-precompile:** to launch rails assets:precompile
-**rails-view-log:** to view log with nano
-**MAJ-project:** to update project from your github repository
+- **rails-console:** To view rails console
+- **db-migrate:** to migrate
+- **rails-server-start:** to launch service for starting rails server
+- **rails-server-stop:** to launch service for starting rails server
+- **rails-server-status:** to view status of service
+- **rails-log-renew:** to clean $PROJECT/log/production.log
+- **rails-assets-precompile:** to launch rails assets:precompile
+- **rails-view-log:** to view log with nano
+- **MAJ-project:** to update project from your github repository
 
