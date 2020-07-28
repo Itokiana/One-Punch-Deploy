@@ -9,7 +9,7 @@ read -p "Chemin absolu du projet: " project_path
 read -p "Secret key base (using 'rails secret' in project): " secret_key_base
 echo -e "\n"
 read -p "Donnez le nom d'utilisateur pour la base de donnees PostgreSQL: " user_postgres
-read -p "Donnez le mot de passe pour la base de donnees PostgreSQL: " -s database_postgres
+read -p "Donnez le mot de passe pour la base de donnees PostgreSQL: " -s password_postgres
 read -p "Donnez le nom pour la base de donnees PostgreSQL: " database_postgres
 echo -e "\n"
 
