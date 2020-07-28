@@ -53,7 +53,7 @@ service_conf="
 rails_server_launcher="
 #!/bin/bash
 \n
-\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails assets:precompile db:migrate s
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails s
 \n
 "
 
@@ -64,12 +64,14 @@ echo -e $nginx_conf > /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
 mkdir $current_installation_path/bin
-nano $current_installation_path/bin/server_launcher.sh
+touch $current_installation_path/bin/server_launcher.sh
 sudo chmod +x $current_installation_path/bin/server_launcher.sh
 echo -e $rails_server_launcher > $current_installation_path/bin/server_launcher.sh
 sudo chmod +x $current_installation_path/bin/*.sh
 
 echo -e $service_conf > /etc/systemd/system/rails_server.service
+
+cd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails assets:precompile db:migrate
 
 sudo systemctl start rails_server.service
 sudo systemctl enable rails_server.service
