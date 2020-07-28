@@ -9,7 +9,9 @@ echo -e "\n"
 read -p "Preciser la version de Ruby: " ruby_version
 read -p "Preciser la version de Rails: " rails_version
 read -p "Secret key base (using 'rails secret' in project): " secret_key_base
-
+echo -e "\n"
+read -p "Donnez un nom d'utilisateur pour la base de donnees PostgreSQL: " user_postgres
+read -p "Donnez un nom pour la base de donnees PostgreSQL: " database_postgres
 current_installation_path=`pwd`
 
 
@@ -30,13 +32,6 @@ server {
 \n
 \n}
 '
-
-rails_server_launcher="
-#!/bin/bash
-\n
-\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL=$database_url RAILS_ENV=production /$user_service/.rbenv/shims/rails s
-\n
-"
 
 service_conf="
 [Unit]
@@ -79,6 +74,25 @@ gem install bundler
 gem install rails -v $rails_version
 
 rbenv rehash
+
+sudo apt install postgresql-12 libpq-dev
+sudo su - postgres
+createuser --pwprompt deploy
+createdb -O deploy myapp
+exit
+
+echo -e "\n"
+read -p "Veuillez resaisir le mot de passe de l'utilisateur $user_postgres pour la base de donnees $database_postgres: " password_postgres
+echo -e "\n"
+
+rails_server_launcher="
+#!/bin/bash
+\n
+\ncd $project_path && SECRET_KEY_BASE=$secret_key_base DATABASE_URL='postgres://$user_postgres:$password_postgres@localhost/$database_postgres' RAILS_ENV=production /$user_service/.rbenv/shims/rails s
+\n
+"
+
+cd $project_path && bundle install
 
 sudo apt-get install -y nginx-extras
 echo -e $nginx_conf > /etc/nginx/site-enabled/default
