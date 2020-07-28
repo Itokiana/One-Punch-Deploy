@@ -5,10 +5,6 @@
 #   Copyright 2020
 #
 #
-# sudo su - postgres
-# createuser --pwprompt $user_postgres
-# createdb -O $user_postgres $database_postgres
-# exit
 
 echo "
 xkkxxkkxxkkkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdddddddddddddddd
