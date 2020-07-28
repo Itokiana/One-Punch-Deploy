@@ -44,7 +44,7 @@ To auto-config your server, just type this cli:
 
 That's all, you can type you ip server like **http://x.x.x.x** in browser and enjoy it!
 
-NB: You have some alias commands for some tasks who are installed automatically, such as:
+NB: You have some alias command-lines for some tasks who are installed automatically, such as:
 
 - **rails-console:** To view rails console
 - **db-migrate:** to migrate
